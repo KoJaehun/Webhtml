@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selector(선택자)</title>
+	<style type="text/css">
+	/* [*] 전체 선택자 : 모든 태그를 선택 */
+	* {
+		font-size: 25px;
+	}
+	/* [태그] 태그 선택자 : 해당 태그를 전부 선택 */
+	div {
+		border: 5px solid orangered;
+		margin-bottom: 20px; /* 하단부에 바깥여백 */
+	}
+	/* [#] id선택자 : 해당 id 1개 선택 */
+	#div1 {
+		font-weight: bold; /* 글자 진하게 */
+		color: dodgerblue;
+	}
+	/* [.] class선택자 : 해당 class 복수개 선택 */
+	.point {
+		color:red;
+		font-size: 60px;
+		font-weight: bold;
+	}
+	/* [?, ?] 그룹 선택자 : , 로 엮은 그룹 모두 선택 */
+	div, span {
+		color: green;
+	}
+	div {
+		color: green;
+	}
+	span {
+		color: green;
+	}
+	
+
+
+
+	div{color: red;}
+	#div1{color: yellow;}
+	.div2{color: blue;}
+	</style>
+</head>
+<body>
+	<div>
+		TO. 동선
+		<p>
+			<span>동선씨 허쉬우유 정말 맛있네요. <span class="point">또</span> 먹고싶네요.<br>
+			<span class="point">하하 그렇다구요.</span>
+		</p>
+	</div>
+
+	<div id="div1" class="div2" style="color:green">
+		동선씨 장난이에요.
+	</div>
+</body>
+</html>
