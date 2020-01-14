@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table (표) 관련 태그 </title>
+</head>
+<body>
+	<!-- table, tr, td, th -->
+	<table border="1px">
+		<caption>동선씨와 친구들</caption>
+		<thead> <!-- 표의 제목열을 구분하는 태그 -->
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>별명</th>
+		</tr>
+		</thead>
+		<tr>
+			<td>1</td>
+			<td>동선</td>
+			<td>도비</td>
+		</tr>
+		<tr>
+			<td rowspan="2">2</td> <!-- rowspan 세로합치기 -->
+			<td colspan="2">똥선</td> <!-- colspan 가로합치기 -->
+		</tr>
+		<tr>
+			<td>아이번</td>
+			<td>도동선</td>
+		</tr>
+		<tfoot> <!-- 표의 요약을 구분하는 태그 --> 
+			<tr>
+				<td colspan = "3"> 칭구가 2명이다.
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>
