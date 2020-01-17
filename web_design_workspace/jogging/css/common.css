@@ -67,3 +67,18 @@ button.btn-support:hover{
 	background-color: #15E4FF;
 	border-color: transparent;
 }
+
+
+/* Text 밑줄 쳐지는 CSS 효과 */
+.magicline:after{
+	content: '';
+	display: block;
+	width: 0;
+	height: 2.5px;
+	background-color: #506763;
+	transition: width 0.3s;
+	
+}
+.magicline:hover:after{
+	width: 100%;
+}

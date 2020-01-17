@@ -58,7 +58,16 @@
 			background-color: #56565A;
 			color: yellow;
 		}
-		.header_content_nav{background-color: green;}
+		.header_content_nav{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 350px; /* new men women 사이즈 */
+		}
+		.header_content_nav > div {
+			/* border: 1px solid red; */
+			padding: 10px 0;
+		}
 		.header_content_member{
 			/* width: 160px; */
 			display: flex;
@@ -69,13 +78,13 @@
 		.header_content_member > div {
 			padding: 10px 0px 10px 3px;
 		}
-		.header_content_member_mypage {
+		.header_content_dropdown_group {
 			position: relative;
 		}
-		.header_content_member_first:hover .header_dropdown {
+		.header_content_dropdown_wrap:hover .header_dropdown {
 			display: block;
 		}
-		.header_content_member_mypage > a {
+		.header_content_dropdown_group > a {
 			display: inline-block;
 			padding: 12px 15px;
 			font-weight: 400;
@@ -86,7 +95,7 @@
 			line-height: 19px;
 		}
 
-		.header_content_member_first:hover > div > a,
+		.header_content_dropdown_wrap:hover > div > a,
 		.header_content_member_cart:hover > a{
 			background-color: rgba(20, 23, 28, .05);
 			border-color: rgba(20, 23, 28, .05);
@@ -103,7 +112,7 @@
 			line-height: 19px;
 		}
 		.header_content_logo_img{
-			max-width: 200px;
+			max-width: 145px;
 			vertical-align: middle;
 		}
 		.header_content_logo_text{
@@ -152,7 +161,11 @@
 			border-color: transparent transparent #fff transparent;
 			z-index: 99;
 		}
+
 		
+
+
+	
 	</style>
 </head>
 <body>
@@ -163,6 +176,83 @@
 					<img class="header_content_logo_img" src="../../img/조깅.png" alt="로고이미지" >
 					<span class="header_content_logo_text">JOGGING</span>
 				</div>
+				
+				<div class="header_content_nav">
+					<div class="header_content_dropdown_wrap">
+						<div class="header_content_dropdown_group">
+							<a href="#" class="magicline">NEW</a>
+								<div class="header_dropdown">
+								<div class="arrow"></div>
+									<ul class="header_dropdown_menu">
+									<li><a href="#">OUTER</a></li>
+									<li><a href="#">TOP</a></li>
+									<li><a href="#">BOTTOM</a></li>
+									<li><a href="#">SHOES</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="header_content_dropdown_wrap">
+						<div class="header_content_dropdown_group">
+							<a href="#" class="magicline">MEN</a>
+								<div class="header_dropdown">
+								<div class="arrow"></div>
+									<ul class="header_dropdown_menu">
+									<li><a href="#">OUTER</a></li>
+									<li><a href="#">TOP</a></li>
+									<li><a href="#">BOTTOM</a></li>
+									<li><a href="#">SHOES</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="header_content_dropdown_wrap">
+						<div class="header_content_dropdown_group">
+							<a href="#" class="magicline">WOMEN</a>
+								<div class="header_dropdown">
+								<div class="arrow"></div>
+									<ul class="header_dropdown_menu">
+									<li><a href="#">OUTER</a></li>
+									<li><a href="#">TOP</a></li>
+									<li><a href="#">BOTTOM</a></li>
+									<li><a href="#">SHOES</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="header_content_dropdown_wrap">
+						<div class="header_content_dropdown_group">
+							<a href="#" class="magicline">KIDS</a>
+								<div class="header_dropdown">
+								<div class="arrow"></div>
+									<ul class="header_dropdown_menu">
+									<li><a href="#">OUTER</a></li>
+									<li><a href="#">TOP</a></li>
+									<li><a href="#">BOTTOM</a></li>
+									<li><a href="#">SHOES</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="header_content_dropdown_wrap">
+						<div class="header_content_dropdown_group">
+							<a href="#" class="magicline">ETC</a>
+							<div class="header_dropdown">
+								<div class="arrow"></div>
+									<ul class="header_dropdown_menu">
+									<li><a href="#">모자</a></li>
+									<li><a href="#">장갑</a></li>
+									<li><a href="#">양말</a></li>
+									<li><a href="#">악세사리</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="header_content_search">
 					<form name="" action="" method="GET">
 						 <div class="header_content_search_group">
@@ -172,16 +262,9 @@
 						 </div>
 					</form>
 				</div>
-				<div class="header_content_nav">
-					<a href="#">NEW</a>
-					<a href="#">MEN</a>
-					<a href="#">WOMEN</a>
-					<a href="#">KIDS</a>
-					<a href="#">ETC</a>
-				</div>
 				<div class="header_content_member">
-					<div class="header_content_member_first">
-						<div class="header_content_member_mypage">
+					<div class="header_content_dropdown_wrap">
+						<div class="header_content_dropdown_group">
 							<a href="#">마이페이지</a>
 							<div class="header_dropdown">
 								<div class="arrow"></div>
