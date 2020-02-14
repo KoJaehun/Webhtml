@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		* {box-sizing: border-box;
+		}
+		
+		body {font-family: Verdana, sans-serif;
+		}
+		img {vertical-align: middle;
+		}
+		div {
+			border: 1px solid red;
+			padding: 0;
+			margin: 0;
+		}
+		
+		/* 캐러셀 1 css */
+		/* Slideshow container */
+		.slideshow-container {
+		  width: 1600px;
+		  height: 400px;
+		  
+		  position: relative;
+		  margin: auto;
+		  overflow: hidden;
+		}
+
+		/* Caption text */
+		.img_text {
+		  color: white;
+		  font-size: 55px;
+		  font-weight: bold;
+		  padding: 8px 12px;
+		  position: absolute;
+		  bottom: 8px;
+		  width: 100%;
+		  text-align: center;
+		}
+
+		/* Number text (1/3 etc) */
+		.numbertext {
+		  color: #f2f2f2;
+		  font-size: 12px;
+		  padding: 8px 12px;
+		  position: absolute;
+		  top: 0;
+		}
+
+		/* The bullets/indicators */
+		.dot{
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		}
+
+		.active {
+		  background-color: #717171;
+		}
+
+		/* Fading animation */
+		.fade {
+		  -webkit-animation-name: fade;
+		  -webkit-animation-duration: 2.0s;
+		  animation-name: fade;
+		  animation-duration: 2.0s;
+		}
+
+		@-webkit-keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+
+		@keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+
+		/* On smaller screens, decrease text size */
+		@media only screen and (max-width: 300px) {
+		  .text {font-size: 11px}
+		}
+
+		div.mySlides fade > img {
+			width: 100%;	
+		}
+		
+		/* 캐러셀 1 끝 */
+
+		/* 캐러셀 2 시작*/
+		#wrapper{
+		    width:600px;
+		    margin:50px auto;
+		    height:400px;
+		    position:relative;
+		    color:#fff;
+		    text-shadow:rgba(0,0,0,0.1) 2px 2px 0px;    
+		}
+
+		#slider-wrap{
+		    width:600px;
+		    height:400px;
+		    position:relative;
+		    overflow:hidden;
+		}
+
+		#slider-wrap ul#slider{
+		    width:100%;
+		    height:100%;
+		    
+		    position:absolute;
+		    top:0;
+		    left:0;     
+		}
+
+		#slider-wrap ul#slider li{
+		    float:left;
+		    position:relative;
+		    width:600px;
+		    height:400px;   
+		}
+
+		#slider-wrap ul#slider li > div{
+		    position:absolute;
+		    top:20px;
+		    left:35px;  
+		}
+
+		#slider-wrap ul#slider li > div h3{
+		    font-size:36px;
+		    text-transform:uppercase;   
+		}
+
+		#slider-wrap ul#slider li > div span{
+		    font-family: Neucha, Arial, sans serif;
+		    font-size:21px;
+		}
+
+		#slider-wrap ul#slider li img{
+		    display:block;
+		    width:100%;
+		  height: 100%;
+		}
+
+
+		/*btns*/
+		.btns{
+		    position:absolute;
+		    width:50px;
+		    height:60px;
+		    top:50%;
+		    margin-top:-25px;
+		    line-height:57px;
+		    text-align:center;
+		    cursor:pointer; 
+		    background:rgba(0,0,0,0.1);
+		    z-index:100;
+		    
+		    
+		    -webkit-user-select: none;  
+		    -moz-user-select: none; 
+		    -khtml-user-select: none; 
+		    -ms-user-select: none;
+		    
+		    -webkit-transition: all 0.1s ease;
+		    -moz-transition: all 0.1s ease;
+		    -o-transition: all 0.1s ease;
+		    -ms-transition: all 0.1s ease;
+		    transition: all 0.1s ease;
+		}
+
+		.btns:hover{
+		    background:rgba(0,0,0,0.3); 
+		}
+
+		#next{right:-50px; border-radius:7px 0px 0px 7px;}
+		#previous{left:-50px; border-radius:0px 7px 7px 7px;}
+		#counter{
+		    top: 30px; 
+		    right:35px; 
+		    width:auto;
+		    position:absolute;
+		}
+
+		#slider-wrap.active #next{right:0px;}
+		#slider-wrap.active #previous{left:0px;}
+
+
+		/*bar*/
+		#pagination-wrap{
+		    min-width:20px;
+		    margin-top:350px;
+		    margin-left: auto; 
+		    margin-right: auto;
+		    height:15px;
+		    position:relative;
+		    text-align:center;
+		}
+
+		#pagination-wrap ul {
+		    width:100%;
+		}
+
+		#pagination-wrap ul li{
+		    margin: 0 4px;
+		    display: inline-block;
+		    width:5px;
+		    height:5px;
+		    border-radius:50%;
+		    background:#fff;
+		    opacity:0.5;
+		    position:relative;
+		  top:0;
+		  
+		  
+		}
+
+		#pagination-wrap ul li.active{
+		  width:12px;
+		  height:12px;
+		  top:3px;
+		    opacity:1;
+		    box-shadow:rgba(0,0,0,0.1) 1px 1px 0px; 
+		}
+
+
+
+
+		/*Header*/
+		h1, h2{text-shadow:none; text-align:center;}
+		h1{ color: #666; text-transform:uppercase;  font-size:36px;}
+		h2{ color: #7f8c8d; font-family: Neucha, Arial, sans serif; font-size:18px; margin-bottom:30px;} 
+
+
+
+
+		/*ANIMATION*/
+		#slider-wrap ul, #pagination-wrap ul li{
+		    -webkit-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+		    -moz-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+		    -o-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+		    -ms-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+		    transition: all 0.3s cubic-bezier(1,.01,.32,1); 
+		}
+
+		/* 캐러셀 2 끝 */
+
+		div.content-container{
+			margin-bottom: 0;
+			overflow: hidden;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			height: 100%;
+			border: 1px solid red;
+		}
+		
+		div.headline_content > p {
+			color: black;
+			font-size: 35px;
+			font-weight: bold;
+			width: 100%;
+			text-align: center;
+		}
+		.bg{
+			position: absolute;
+			top: -400px;
+		}
+		div.content_box {
+			width: 1600px;
+			height: 500px;
+			margin: 0 auto;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+	</style>	
+</head>
+<body>
+	<div class="content-container">
+		
+		<div class="slideshow-container"> <!-- 첫번째 캐러셀 -->
+			<div class="mySlides fade">
+			  <div class="numbertext">1 / 3</div>
+			  <img class="bg" src="../../img/P5qA7nV4qyvKjZFbTtAfE-1920-80.jpg" style="width: 100%">
+			  <div class="img_text">Let's run</div>
+			</div>
+			<div class="mySlides fade">
+			  <div class="numbertext">2 / 3</div>
+			  <img class="bg" src="C:/Developer/workspace/web_design_workspace/jogging/img/PqnXpZGMMKGQ55bhDa8s8S-1920-80.jpg" style="width:100%">
+			  <div class="img_text">Let's run</div>
+			</div>
+			<div class="mySlides fade">
+			  <div class="numbertext">3 / 3</div>
+			  <img class="bg" src="C:/Developer/workspace/web_design_workspace/jogging/img/RjQW3dV3GqKAMaZFTVy3aQ-1920-80.jpg" style="width:100%">
+			  <div class="img_text">Let's run</div>
+			</div>
+			<div style="text-align:center">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</div>
+			
+
+			<div class="headline_content">
+				<p class="headline_text">조깅과 함께 달리기를 시작해보세요 !</p>		
+			</div>
+
+		<!-- 상품박스 -->
+			<div class="content_box">
+					
+				<div id="wrapper">
+			      <div id="slider-wrap">
+
+			          <ul id="slider">
+			             <li data-color="#1abc9c">
+			                <div>
+			                    <h3>Slide #1</h3>
+			                    <span>Sub-title #1</span>
+			                </div>                
+							<img src="https://fakeimg.pl/350x200/960a96/000?text=11111">
+			             </li>
+			             
+			             <li data-color="#3498db">
+			                <div>
+			                    <h3>Slide #2</h3>
+			                    <span>Sub-title #2</span>
+			                </div>
+							<img src="https://fakeimg.pl/350x200/D27328/000?text=22222">
+			             </li>
+			             
+			             <li data-color="#9b59b6">
+			                <div>
+			                    <h3>Slide #3</h3>
+			                    <span>Sub-title #3</span>
+			                </div>
+							<img src="https://fakeimg.pl/350x200/FF607F/000?text=33333">
+			             </li>
+			             
+			             <li data-color="#34495e">
+			                <div>
+			                    <h3>Slide #4</h3>
+			                    <span>Sub-title #4</span>
+			                </div>
+							<img src="https://fakeimg.pl/350x200/0A6E0A/000?text=44444">
+			             </li>
+			             
+			             <li data-color="#e74c3c">
+			                <div>
+			                    <h3>Slide #5</h3>
+			                    <span>Sub-title #5</span>
+			                </div>
+							<img src="https://fakeimg.pl/350x200/0064CD/000?text=55555">
+			             </li>
+			             </ul>
+			          
+			           <!--controls-->
+			          <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+			          <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+			          <div id="counter"></div>
+			          
+			          <div id="pagination-wrap">
+			            <ul>
+			            </ul>
+			          </div>
+			          <!--controls-->  
+			                 
+			      </div>
+			   </div>
+
+			</div>
+		
+		
+		
+
+	
+		
+	
+				<!-- -->
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	/* 캐러셀 1 제이쿼리 */
+	var slideIndex = 0;
+	showSlides();
+
+	function showSlides() {
+	    var i;
+	    var slides = document.getElementsByClassName("mySlides");
+	    var dots = document.getElementsByClassName("dot");
+	    for (i = 0; i < slides.length; i++) {
+	       slides[i].style.display = "none";  
+	    }
+	    slideIndex++;
+	    if (slideIndex > slides.length) {slideIndex = 1}    
+	    for (i = 0; i < dots.length; i++) {
+	        dots[i].className = dots[i].className.replace(" active", "");
+	    }
+	    slides[slideIndex-1].style.display = "block";  
+	    dots[slideIndex-1].className += " active";
+	    setTimeout(showSlides, 5000); // Change image every 2 seconds
+	}
+
+	/* 캐러셀 1 제이쿼리 끝*/
+
+
+	/* 캐러셀 2 제이쿼리 시작 */
+	//current position
+	var pos = 0;
+	//number of slides
+	var totalSlides = $('#slider-wrap ul li').length;
+	//get the slide width
+	var sliderWidth = $('#slider-wrap').width();
+
+
+	$(document).ready(function(){
+	    
+	    
+	    /*****************
+	     BUILD THE SLIDER
+	    *****************/
+	    //set width to be 'x' times the number of slides
+	    $('#slider-wrap ul#slider').width(sliderWidth*totalSlides);
+	    
+	    //next slide    
+	    $('#next').click(function(){
+	        slideRight();
+	    });
+	    
+	    //previous slide
+	    $('#previous').click(function(){
+	        slideLeft();
+	    });
+	    
+	    
+	    
+	    /*************************
+	     //*> OPTIONAL SETTINGS
+	    ************************/
+	    //automatic slider
+	    var autoSlider = setInterval(slideRight, 3000);
+	    
+	    //for each slide 
+	    $.each($('#slider-wrap ul li'), function() { 
+
+	       //create a pagination
+	       var li = document.createElement('li');
+	       $('#pagination-wrap ul').append(li);    
+	    });
+	    
+	    //counter
+	    countSlides();
+	    
+	    //pagination
+	    pagination();
+	    
+	    //hide/show controls/btns when hover
+	    //pause automatic slide when hover
+	    $('#slider-wrap').hover(
+	      function(){ $(this).addClass('active'); clearInterval(autoSlider); }, 
+	      function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
+	    );
+	    
+	    
+
+	});//DOCUMENT READY
+	    
+
+
+	/***********
+	 SLIDE LEFT
+	************/
+	function slideLeft(){
+	    pos--;
+	    if(pos==-1){ pos = totalSlides-1; }
+	    $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos));    
+	    
+	    //*> optional
+	    countSlides();
+	    pagination();
+	}
+
+
+	/************
+	 SLIDE RIGHT
+	*************/
+	function slideRight(){
+	    pos++;
+	    if(pos==totalSlides){ pos = 0; }
+	    $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos)); 
+	    
+	    //*> optional 
+	    countSlides();
+	    pagination();
+	}
+
+
+
+	    
+	/************************
+	 //*> OPTIONAL SETTINGS
+	************************/
+	function countSlides(){
+	    $('#counter').html(pos+1 + ' / ' + totalSlides);
+	}
+
+	function pagination(){
+	    $('#pagination-wrap ul li').removeClass('active');
+	    $('#pagination-wrap ul li:eq('+pos+')').addClass('active');
+	}
+	/* 캐러셀 2 제이쿼리 끝*/
+</script>
+
+</html>
+
+
+
+
